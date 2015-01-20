@@ -3,7 +3,7 @@ window.audioContext = new (window.AudioContext || window.webkitAudioContext)();
 document.getElementById("everything").addEventListener('keydown',function(event){
 
 	var keyPress = "";
-	var keyID
+	var keyID = "";
 
 	switch (event.keyCode) {
 
@@ -72,6 +72,26 @@ document.getElementById("everything").addEventListener('keydown',function(event)
 		keyID = 'button13';
 		break;
 
+		case 79:
+		keyPress = "C#5";
+		keyID = 'button14';
+		break;
+
+		case 76:
+		keyPress = "D5";
+		keyID = 'button15';
+		break;
+
+		case 80:
+		keyPress = "D#5";
+		keyID = 'button16';
+		break;
+
+		case 186:
+		keyPress = "E5";
+		keyID = 'button17';
+		break;
+
 		default:
 		return
 		break;
@@ -103,6 +123,10 @@ function makeMusic(keyPlayed) {
 		'A#4': 466.164,
 		'B4': 493.883,
 		'C5': 523.251,
+		'C#5': 554.365,
+		'D5': 587.330,
+		'D#5': 622.254,
+		'E5': 659.255,
 	};
 
 	window.playNote = function (note, time, duration) {
