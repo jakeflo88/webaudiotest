@@ -1,0 +1,22 @@
+/* Styles for audiotest page */
+
+
+/* Styles for container div */
+#everything {
+	text-align: center;
+}
+
+/* Styles for keys */
+.keysWhite {
+	background-color: white;
+	height: 400px;
+	width: 50px;
+}
+
+.keysBlack {
+	background-color: black;
+	height: 250px;
+	width: 45px;
+	position: absolute;
+	margin-left: 25px;
+}
