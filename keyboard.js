@@ -123,6 +123,13 @@ document.getElementById("everything").addEventListener('keydown',function(event)
 function makeMusic(keyPlayed) {
 
 	window.frequencies = {
+
+		'C2': 65.4064, 'C#2': 69.2957, 'D2': 73.4162, 'D#2': 77.7817, 'E2': 82.4069, 'F2': 87.3071,
+		'F#2': 92.4986, 'G2': 97.9989, 'G#2': 103.826, 'A2': 110.000, 'A#2': 116.541, 'B2': 123.471,
+
+		'C3': 130.813, 'C#3': 138.591, 'D3': 146.832, 'D#3': 155.563, 'E3': 164.814, 'F3': 174.614,
+		'F#3': 184.997, 'G3': 195.998, 'G#3': 207.652, 'A3': 220.000, 'A#3': 233.082, 'B3': 246.942,
+
 		'C4': 261.626, 'C#4': 277.183, 'D4': 293.665, 'D#4': 311.127, 'E4': 329.628, 'F4': 349.228,
 		'F#4': 369.994, 'G4': 391.995, 'G#4': 415.305, 'A4': 440.000, 'A#4': 466.164, 'B4': 493.883,
 
@@ -130,7 +137,7 @@ function makeMusic(keyPlayed) {
 		'F#5':739.989, 'G5': 783.991, 'G#5': 830.609, 'A5': 880.000, 'A#5': 932.328,'B5': 987.767,
 		
 		'C6': 1046.50, 'C#6': 1108.73, 'D6': 1174.66, 'D#6': 1244.51, 'E6': 1318.51, 'F6': 1396.91,
-		'F#6': 1479.98, 'G6': 1567.98, 'G#6': 1661.22, 'A6': 760.00,
+		'F#6': 1479.98, 'G6': 1567.98, 'G#6': 1661.22, 'A6': 1760.00, 'A#6': 1864.66, 'B6': 1975.53,
 	};
 
 	window.playNote = function (note, time, duration) {
@@ -175,33 +182,40 @@ function setOctave(keyAdjust) {
 
 		//convert back to string for freq conversion
 		keyAdjust = keyAdjust.substring(0, keyAdjust.length-1) + octaveUpChange.toString();
-
-		console.log(keyAdjust);
 		
 		makeMusic(keyAdjust);
 	};
 
 	//octave down
 	if (octaveSet.substring(0,1) === '-') {
-		console.log("negative");
+		//find value of change
+		var octaveDownAmount = octaveSet.substring(1,2);
+
+		//change string to number for manipulation
+		var octaveDown = parseInt(octaveDownAmount);
+
+		//find original value
+		var calcDownOctave = parseInt(keyAdjust.charAt(keyAdjust.length-1));
+
+		//add both value to make the octave change
+		var octaveDownChange = octaveDown - calcDownOctave;
+
+		//remove the negative sign
+		var octaveDownChangeStr = octaveDownChange.toString();
+
+		//convert back to string for freq conversion and remove '-'
+		keyAdjust = keyAdjust.substring(0, keyAdjust.length-1) + octaveDownChangeStr.charAt(octaveDownChangeStr.length-1);
+
+		console.log(keyAdjust);
+		
+		makeMusic(keyAdjust);
+		
 	}
 
-
-	/*
-	var change = keyAdjust.charAt(keyAdjust.length-1);
-	console.log(change);
-
-	var calcOctave = parseInt(change) + octaveSet;
-	console.log(calcOctave);
-
-	var newOctave = keyAdjust.substring(0, keyAdjust.length-1) + calcOctave.toString();
-	console.log(newOctave);
-
-	keyAdjust = newOctave;
-	console.log(keyAdjust);
-
-	return keyAdjust;
-	*/
+	//for no octave change
+	else {
+		makeMusic(keyAdjust);
+	}
 
 };
 
