@@ -1,6 +1,4 @@
 /*
-Need to complete the range of frequencies so that everything works again.
-Also need to fix the mouse clicking to make it the same the keyboard.
 After that need to add in key commands for changing octaves
 */
 
@@ -138,6 +136,7 @@ function makeMusic(keyPlayed) {
 		
 		'C6': 1046.50, 'C#6': 1108.73, 'D6': 1174.66, 'D#6': 1244.51, 'E6': 1318.51, 'F6': 1396.91,
 		'F#6': 1479.98, 'G6': 1567.98, 'G#6': 1661.22, 'A6': 1760.00, 'A#6': 1864.66, 'B6': 1975.53,
+
 	};
 
 	window.playNote = function (note, time, duration) {
@@ -153,6 +152,8 @@ function makeMusic(keyPlayed) {
 	playNote(keyPlayed, 0.0, 0.25);
 
 };
+
+
 
 //function for checking octave
 function setOctave(keyAdjust) {
@@ -205,8 +206,6 @@ function setOctave(keyAdjust) {
 
 		//convert back to string for freq conversion and remove '-'
 		keyAdjust = keyAdjust.substring(0, keyAdjust.length-1) + octaveDownChangeStr.charAt(octaveDownChangeStr.length-1);
-
-		console.log(keyAdjust);
 		
 		makeMusic(keyAdjust);
 		

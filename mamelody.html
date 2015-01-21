@@ -18,23 +18,23 @@
 			<!-- Keyboard layout -->
 			<div id="keyboard">
 				
-				<button type="button" onclick="makeMusic('C#4')" id="button2" class="keysBlack"></button>
-				<button type="button" onclick="makeMusic('C4')" id="button1" class="keysWhite"></button>
-				<button type="button" onclick="makeMusic('D#4')" id="button4" class="keysBlack"></button>
-				<button type="button" onclick="makeMusic('D4')" id="button3" class="keysWhite"></button>
-				<button type="button" onclick="makeMusic('E4')" id="button5" class="keysWhite"></button>
-				<button type="button" onclick="makeMusic('F#4')" id="button7" class="keysBlack"></button>
-				<button type="button" onclick="makeMusic('F4')" id="button6" class="keysWhite"></button>
-				<button type="button" onclick="makeMusic('G#4')" id="button9" class="keysBlack"></button>
-				<button type="button" onclick="makeMusic('G4')" id="button8" class="keysWhite"></button>
-				<button type="button" onclick="makeMusic('A#4')" id="button11" class="keysBlack"></button>
-				<button type="button" onclick="makeMusic('A4')" id="button10" class="keysWhite"></button>
-				<button type="button" onclick="makeMusic('B4')" id="button12" class="keysWhite"></button>
-				<button type="button" onclick="makeMusic('C#5')" id="button14" class="keysBlack"></button>
-				<button type="button" onclick="makeMusic('C5')" id="button13" class="keysWhite"></button>
-				<button type="button" onclick="makeMusic('D#5')" id="button16" class="keysBlack"></button>
-				<button type="button" onclick="makeMusic('D5')" id="button15" class="keysWhite"></button>
-				<button type="button" onclick="makeMusic('E5')" id="button17" class="keysWhite"></button>
+				<button type="button" onclick="setOctave('C#4')" id="button2" class="keysBlack"></button>
+				<button type="button" onclick="setOctave('C4')" id="button1" class="keysWhite"></button>
+				<button type="button" onclick="setOctave('D#4')" id="button4" class="keysBlack"></button>
+				<button type="button" onclick="setOctave('D4')" id="button3" class="keysWhite"></button>
+				<button type="button" onclick="setOctave('E4')" id="button5" class="keysWhite"></button>
+				<button type="button" onclick="setOctave('F#4')" id="button7" class="keysBlack"></button>
+				<button type="button" onclick="setOctave('F4')" id="button6" class="keysWhite"></button>
+				<button type="button" onclick="setOctave('G#4')" id="button9" class="keysBlack"></button>
+				<button type="button" onclick="setOctave('G4')" id="button8" class="keysWhite"></button>
+				<button type="button" onclick="setOctave('A#4')" id="button11" class="keysBlack"></button>
+				<button type="button" onclick="setOctave('A4')" id="button10" class="keysWhite"></button>
+				<button type="button" onclick="setOctave('B4')" id="button12" class="keysWhite"></button>
+				<button type="button" onclick="setOctave('C#5')" id="button14" class="keysBlack"></button>
+				<button type="button" onclick="setOctave('C5')" id="button13" class="keysWhite"></button>
+				<button type="button" onclick="setOctave('D#5')" id="button16" class="keysBlack"></button>
+				<button type="button" onclick="setOctave('D5')" id="button15" class="keysWhite"></button>
+				<button type="button" onclick="setOctave('E5')" id="button17" class="keysWhite"></button>
 
 			</div>
 
@@ -45,7 +45,7 @@
 				<form>
 					<input type="radio" name="octave" value="-2">
 					<input type="radio" name="octave" value="-1">
-					<input type="radio" name="octave" value="0" checked>
+					<input type="radio" name="octave" value="0" autofocus="autofocus" checked>
 					<input type="radio" name="octave" value="+1">
 					<input type="radio" name="octave" value="+2">
 				</form>
